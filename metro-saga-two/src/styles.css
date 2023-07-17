@@ -9,59 +9,65 @@ body {
 }
 
 .contain {
+  width: 100%;
+  height: 100vh;
+  position: relative;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-image: url("/assets/picts/MetroBackground.mp4");
 }
-.contain .navbar {
+.contain .metro {
+  position: relative;
+}
+.contain .metro .metroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.contain .metro .containMetro {
+  position: relative;
+  padding: 20px;
+  color: #000000;
+}
+.contain .metro .containMetro .navbar {
   padding: 3px;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
 }
-.contain .navbar .navbar-brand p {
-  color: azure;
+.contain .metro .containMetro .navbar .navbar-brand p {
+  color: rgb(0, 0, 0);
   font-size: 1.8em;
   font-family: Metro;
+  text-shadow: 2px 2px 2px rgba(95, 5, 5, 0.69);
 }
-.contain .navbar #btnBar {
+.contain .metro .containMetro .navbar #btnBar {
   display: none;
 }
-.contain .navbar .navbar-nav {
+.contain .metro .containMetro .navbar .navbar-nav {
   -moz-column-gap: 60px;
        column-gap: 60px;
   display: flex;
   align-items: center;
   flex-direction: row;
 }
-.contain .navbar .navbar-nav .nav-item .nav-link {
-  color: azure;
+.contain .metro .containMetro .navbar .navbar-nav .nav-item .nav-link {
+  color: rgb(0, 0, 0);
   font-size: 1.4em;
   font-family: Metro;
 }
-.contain .navbar .navbar-nav .nav-item .nav-link .dropdown-menu .dropdown-item {
+.contain .metro .containMetro .navbar .navbar-nav .nav-item .nav-link .dropdown-menu .dropdown-item {
   font-size: 1.4em;
   font-family: Metro;
-}
-.contain .metro .metroBackground {
-  height: 100%;
-  max-width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.contain .metro .containMetro {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .contain .metro .containMetro .welcome {
-  color: #FFFFFF;
+  color: #000000;
   text-align: center;
   font-family: Metro;
   margin-top: 120px;
@@ -78,10 +84,12 @@ body {
   border: transparent;
   background: transparent;
 }
+.contain .metro .containMetro .row .col-lg-4 .card .card-body {
+  padding: 20px;
+}
 .contain .metro .containMetro .row .col-lg-4 .card .card-body .img-fluid {
+  width: 100%;
   height: 450px;
-  cursor: pointer;
-  max-width: 300px;
 }
 .contain .metro .containMetro .row .col-lg-4 .card .card-body .img-fluid:hover {
   box-shadow: 1px 3px 15px 5px #FFFFFF;
@@ -101,27 +109,95 @@ body {
   max-width: 160px;
 }
 .contain .metro .containMetro .footer .copyrigth {
-  color: #FFFFFF;
+  color: #000000;
   font-size: 1.5em;
   font-family: Metro;
 }
 .contain .metro .containMetro .footer .listSocial {
   -moz-column-gap: 30px;
        column-gap: 30px;
+  margin-top: 20px;
+  list-style: none;
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  list-style-type: none;
+  justify-content: center;
 }
 .contain .metro .containMetro .footer .listSocial a {
   text-decoration: none;
 }
 .contain .metro .containMetro .footer .listSocial a .fa {
+  color: rgb(0, 0, 0);
+  font-size: 1.4em;
+}
+
+.offcanvas {
+  width: 100%;
+  max-width: 150px;
+  height: 300px;
+  border-radius: 0px 0px 0px 40px;
+  border: 1px solid azure;
+}
+.offcanvas .offcanvas-body {
+  border: 1px solid azure;
+  background-color: black;
+  border-radius: 0px 0px 0px 40px;
+}
+.offcanvas .offcanvas-body #btnCloseMenu {
+  font-size: 1.4em;
+  color: darkred;
+  border: transparent;
+  background: transparent;
+}
+.offcanvas .offcanvas-body .title {
+  text-align: center;
+  color: azure;
+  font-size: 1.8em;
+  font-family: Metro;
+}
+.offcanvas .offcanvas-body .show-menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style-type: none;
+}
+.offcanvas .offcanvas-body .show-menu .menu-item {
+  margin: 10px auto;
+}
+.offcanvas .offcanvas-body .show-menu .menu-item .menu-link {
   color: azure;
   font-size: 1.4em;
+  font-family: Metro;
+}
+.offcanvas .offcanvas-body .show-menu .menu-item .menu-link .dropdown-menu .dropdown-item {
+  font-size: 1.4em;
+  font-family: Metro;
 }
 
 @font-face {
   font-family: Metro;
   src: url("/assets/fonts/Metro.otf");
+}
+@media screen and (max-width: 1140px) {
+  .contain .metro .containMetro .navbar .navbar-nav {
+    display: none;
+  }
+  .contain .metro .containMetro .navbar #btnBar {
+    font-weight: bold;
+    font-size: 1.6em;
+    display: block;
+    color: rgb(94, 8, 8);
+    border: transparent;
+    background: transparent;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.69);
+  }
+  .contain .metro .containMetro .footer .img-fluid {
+    max-width: 60px;
+  }
+  .contain .metro .containMetro .footer .listSocial {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .contain .metro .containMetro .footer .listSocial .fa {
+    margin: 10px auto;
+  }
 }/*# sourceMappingURL=styles.css.map */
